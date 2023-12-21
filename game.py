@@ -19,19 +19,21 @@ def typing(words):
     time.sleep(1)
 
 # Defining all outcome variables
-def initial_choice():
-    pass
-
 def control_room():
-    typing("The Control Room looms ahead, its entrance adorned with flickering emergency lights that intermittently reveal the vast array of control panels and holographic displays within. As you step inside, the air is thick with a metallic taste, and the hum of the dormant machinery seems to intensify.\n")
+    typing("While looking around the Control Room you notice the entrance adorned with flickering emergency lights that intermittently reveal the vast array of control panels and holographic displays within. The air is thick with a metallic taste, and the hum of the dormant machinery seems to intensify.\n")
     cr_choice = input("Do you 'access main computer' or 'investigate control pannels': ")
 
     if cr_choice == "access main computer":
         system('clear')
-        typing("With a cautious approach, you decide to interface with the station's main computer. The holographic display springs to life, revealing logs, system status reports, and cryptic messages left by the previous inhabitants. The information may shed light on the events that led to the station's abandonment, potential hazards, or clues about where to find crucial resources.")
+        typing("Approaching the activated holographic display, you observe that the evacuation map remains visible, presumably depicting events that transpired in this location. Upon scrutinizing the layout, you discover that the station encompasses an extensive network of maintenance tunnels. Intrigued, you decide to delve into further investigation.")
+        time.sleep(5)
+        tunnels()
+                
     elif cr_choice == "investigate control pannels":
         system('clear')
-        typing("You choose to manually investigate the control panels scattered throughout the room. Some are flickering with life, while others remain unresponsive. Your goal is to restore power to essential systems, enabling further exploration and potentially uncovering hidden areas of the station.")
+        typing("You feel drawn to the numerous control panels around you. Among them, you spot a metallic plaque with the word 'Power' inscribed on it. When you flip the switch, a surge of static heat courses through your hand, causing you to recoil. Examining your now injured hand, you discover that it's scorched. Recognizing the need for medical attention, you gather yourself and stand up to explore the station in search of a medical bay.")
+        time.sleep(5)
+        medical_bay()
     else:
         typing("Please choose a valid option")
         system('clear')
@@ -144,8 +146,31 @@ def start():
     typing("The distant hum of malfunctioning machinery echoes through the cold, desolate corridors of the abandoned space station. As you gradually regain consciousness, the dim emergency lights flicker, revealing the remnants of what was once a bustling hub of cosmic exploration. The metallic creaks and distant hisses underscore the eerie silence that now pervades the station.\n")
     typing("Your surroundings appear foreign, a surreal dance of shadows cast by the dormant equipment that once served the station's inhabitants. Through the transparent walls, the vastness of space stretches out, dotted with stars like distant memories of a life once lived.\n")
     typing("As you take in your surroundings, the weightlessness of microgravity envelops you, a constant reminder of the station's isolation in the cosmic void. Equipment, now eerily still, suggests an abrupt evacuation or a catastrophic event that led to the abandonment of this once thriving outpost.\n")
-    typing("The control panel in front of you blinks sporadically, its pale glow revealing cryptic symbols and unfamiliar controls. A holographic display flickers, attempting to convey an urgent message that fades in and out of coherence. A single word stands out: 'Survive.'\n")
+    typing("The control panel in front of you blinks sporadically, its pale glow revealing cryptic symbols and unfamiliar controls. A holographic display flickers, attempting to convey an urgent message that fades in and out of coherence. A single word stands out: 'Escape!.'\n")
     typing("Your journey begins here, a lone soul amidst the forgotten echoes of a cosmic mystery. The station's secrets await discovery, and the choices you make will unveil the untold story of its demise and determine your own fate in the cold expanse of the cosmos. The only certainty is that something lingers in the shadows, waiting to be uncovered.\n")
-    typing("You seen the flickering light of a terminal admist the rumble of the room.\n")
+    time.sleep(5)
+    choice = input("Do you want to investigate the 'control room' or explore the 'living quarters': ")
 
-escape_pod()
+    if choice == "control room":
+        system('clear')
+        control_room()
+    elif choice == "living quarters":
+        system('clear')
+        living_quarters()
+    else:
+        typing("Please choose a valid option")
+        system('clear')
+        start()
+
+# while True: # Making sure you only go back to the second choice after a invalid option
+#     cr2_choice = input("Will you 'enter the maintenance tunnels' or 'proceed to the medical bay': ")
+
+#     if cr2_choice == "enter the maintenance tunnels":
+#         system('clear')
+#         tunnels()
+#     elif cr2_choice == "proceed to medical bay":
+#         system('clear')
+#         medical_bay()
+#     else:
+#         typing("Please choose a valid option")
+#         system('clear')
