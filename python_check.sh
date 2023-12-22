@@ -6,7 +6,7 @@ then
     then
         echo "Python 3.9.x or higher is recommended for running this program." >&2
     else
-        echo "You have Python 3 installed. To continue, please run 'run.sh." >&2
+        echo "You have Python 3 installed. To continue, please run 'bash run.sh'." >&2
     fi 
 else
     echo "This program requires Python 3 to be installed.
