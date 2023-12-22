@@ -6,6 +6,27 @@ from colorama import Fore
 
 print(Fore.LIGHTGREEN_EX) # Setting text color to light green
 
+# Testing realistic typing feature
+# try:
+#     import time 
+#     import sys
+#     import random
+
+#     def typing(words):
+#         words += "\n"
+#         for char in words:
+#             time.sleep(random.choice([
+#             0.03, 0.011, 0.008, 0.007, 0.007,
+#             0.007, 0.06, 0.006, 0.05, 0.01
+#             ]))
+#             sys.stdout.write(char)
+#             sys.stdout.flush()
+#         time.sleep(1)
+
+#     typing("Hello World!")
+# except:
+#     print("it didn't Work")
+
 # Creating typing effect in terminal
 def typing(words):
     words += "\n"
@@ -17,6 +38,23 @@ def typing(words):
         sys.stdout.write(char)
         sys.stdout.flush()
     time.sleep(1)
+
+# Testing main decision control flow
+# try:
+#     def next_place_a():
+#         pass
+
+#     def next_place_b():
+#         pass
+
+#     choice = input("Will you choose 'option a' or 'option b': ")
+
+#     if choice == "option a":
+#         next_place_a() # Send user to their chosen place 
+#     elif choice == "option b":
+#         next_place_b() # Send user to their chosen place 
+# except:
+#     print("It didn't work")
 
 # Defining all outcome variables
 def control_room():
@@ -185,6 +223,7 @@ def end():
     time.sleep(5)
     system('clear')
 
+
 # Defining the introduction function and assigning the story intro to print
 def start():
     # print("It Worked!") # Testing
@@ -206,16 +245,3 @@ def start():
         typing("Please choose a valid option")
         system('clear')
         start()
-
-# while True: # Making sure you only go back to the second choice after a invalid option
-#     cr2_choice = input("Will you 'enter the maintenance tunnels' or 'proceed to the medical bay': ")
-
-#     if cr2_choice == "enter the maintenance tunnels":
-#         system('clear')
-#         tunnels()
-#     elif cr2_choice == "proceed to medical bay":
-#         system('clear')
-#         medical_bay()
-#     else:
-#         typing("Please choose a valid option")
-#         system('clear')

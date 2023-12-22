@@ -6,7 +6,6 @@ from colorama import Fore
 
 print(Fore.LIGHTGREEN_EX) # Setting text color to light green
 
-
 def display_menu(menu):
     # Display a graphical text-based main menu
     print("*       *             *  ")
