@@ -170,6 +170,7 @@ def death():
     print("   *           *      *\n ")
     print("=======================")
     time.sleep(5)
+    system('clear')
 
 def end():
     print("=======================")
@@ -182,6 +183,7 @@ def end():
     print("   *           *      *\n ")
     print("=======================")
     time.sleep(5)
+    system('clear')
 
 # Defining the introduction function and assigning the story intro to print
 def start():
