@@ -16,7 +16,7 @@ Embark on a riveting journey into the unknown with our thrilling Choose Your Own
 
     Either download the Git repository by clicking on the green "< > code" button, then click "Download ZIP" or by running the following command in your preferred terminal application to clone the repository:
     ```bash
-    https://github.com/WillemGibson/COYA-Terminal-App.git
+    git clone https://github.com/WillemGibson/COYA-Terminal-App.git
     ```
 
 2. **Navigate to the Application Directory**
