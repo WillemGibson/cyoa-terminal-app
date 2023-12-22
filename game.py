@@ -217,5 +217,3 @@ def start():
 #     else:
 #         typing("Please choose a valid option")
 #         system('clear')
-        
-control_room()
