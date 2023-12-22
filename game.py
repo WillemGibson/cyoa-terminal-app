@@ -27,12 +27,14 @@ def control_room():
         system('clear')
         typing("Approaching the activated holographic display, you observe that the evacuation map remains visible, presumably depicting events that transpired in this location. Upon scrutinizing the layout, you discover that the station encompasses an extensive network of maintenance tunnels. Intrigued, you decide to delve into further investigation.")
         time.sleep(5)
+        system('clear')
         tunnels()
                 
     elif cr_choice == "investigate control pannels":
         system('clear')
         typing("You feel drawn to the numerous control panels around you. Among them, you spot a metallic plaque with the word 'Power' inscribed on it. When you flip the switch, a surge of static heat courses through your hand, causing you to recoil. Examining your now injured hand, you discover that it's scorched. Recognizing the need for medical attention, you gather yourself and stand up to explore the station in search of a medical bay.")
         time.sleep(5)
+        system('clear')
         medical_bay()
     else:
         typing("Please choose a valid option")
@@ -42,18 +44,25 @@ def control_room():
 def living_quarters():
     # Display the living quarters introductino
     typing("As you navigate through the corridors, you come across a sealed door labeled 'Living Quarters.' The entrance panel flickers hesitantly before reluctantly sliding open, revealing a scene frozen in time. The living quarters, once filled with life, now echo with an eerie stillness.\n")
+    typing("The living quarters consist of neatly organized sleeping pods, each with a small personal workstation. The soft glow of the emergency lights barely illuminates the area, casting long shadows across the room. As you sift through the personal belongings left behind, you discover handwritten notes, personal logs, and audio recordings.\n")
     # Get user's choice
-    lq_choice = input("Do you 'search for personal logs' or 'search for supplies': ")
+    lq_choice = input("Do you 'examine the personal logs' or 'search for supplies': ")
 
     # Dis play their choice and decide where to direct user after choice, redo if input is invalid
     if lq_choice == "search for personal logs":
         system('clear')
-        typing("The living quarters consist of neatly organized sleeping pods, each with a small personal workstation. The soft glow of the emergency lights barely illuminates the area, casting long shadows across the room. As you sift through the personal belongings left behind, you discover handwritten notes, personal logs, and audio recordings.\n")
-        typing("These artifacts provide glimpses into the lives of the station's former inhabitants, their dreams, aspirations, and the events leading up to the mysterious abandonment. Some logs hint at internal conflicts, while others express excitement about groundbreaking discoveries. Unraveling these personal stories might offer clues about the station's fate and the motivations behind its sudden evacuation.")
+        typing("These artifacts provide glimpses into the lives of the station's former inhabitants, their dreams, aspirations, and the events leading up to the mysterious abandonment. Some logs hint at internal conflicts, while others express excitement about groundbreaking discoveries. While perusing one of the logs, you notice a recurring phrase that captures your attention: 'the specimen' is repeated incessantly throughout the text.\n")
+        typing("Shortly after making this discovery, a wave of nausea engulfs you, making it difficult to maintain your equilibrium. There must be a medical bay around here somewhere...")
+        time.sleep(5)
+        system('clear')
+        medical_bay()
     elif lq_choice == "search for supplies":
         system('clear')
         typing("The living quarters also serve as a storage area for essential supplies. Crates of food, medical kits, and tools are scattered throughout the room. However, the unsettling quietude is occasionally interrupted by strange sounds emanating from the darkness.\n")
-        typing("As you search for supplies, you must decide whether to risk exploring further or to play it safe. The potential rewards include crucial resources that may aid in your survival, but there's a lurking sense of danger. Unsettling creaks and distant echoes suggest that you might not be alone in the living quarters.")
+        typing("While scouring for provisions, a faint creaking resonates from the corridors behind you. Upon pivoting, a piercing screech assaults your ears, and then...")
+        time.sleep(5)
+        system('clear')
+        death()
     else:
         typing("Please choose a valid option")
         system('clear')
@@ -61,14 +70,24 @@ def living_quarters():
 
 def medical_bay():
     typing("Upon entering the Medical Bay, you find a sterile environment filled with abandoned medical equipment. The soft hum of dormant machinery and the faint glow of emergency lighting give the room an otherworldly ambiance. The Medical Bay, once a place of healing, now seems frozen in time.\n")
-    mb_choice = input("Do you 'seek medical supplies' or 'check for signs of life': ")
+    typing("You hurriedly search for the necessary machinery to address your medical emergency. Once you've successfully treated your condition, you catch sight of a research and development lab out of the corner of your eye. As you turn your head, you spot a sizable white apparatus featuring a subdued display – undoubtedly the primary diagnostic tool in the medical setting. \n")
+    mb_choice = input("Do you 'seek medical supplies' or 'activate the medical system': ")
 
     if mb_choice == "seek medical supplies":
         system('clear')
         typing("As you rummage through the neatly organized cabinets, you discover a cache of medical supplies. Bandages, medications, and diagnostic tools are scattered across the shelves. Amidst the supplies, you find personal effects—photographs, trinkets, and handwritten notes. These relics offer glimpses into the lives of those who once called this station home. You might stumble upon medical records that hint at the nature of a mysterious illness or injury that plagued the station's occupants.")
+        time.sleep(5)
+        system('clear')
+        research_lab()
     elif mb_choice == "check for signs of life":
         system('clear')
-        typing("You decide to interface with the station's advanced medical systems. As the scanners activate, a holographic display materializes, showing the station's vital statistics and the health status of its former inhabitants. Strange anomalies and irregularities appear on the screen, raising more questions than answers. You might uncover information about a contagion that led to the evacuation or a malfunction in the life support systems.")
+        typing("You decide to interface with the station's advanced medical systems. As the scanners activate, a holographic display materializes, showing the station's vital statistics and the health status of its former inhabitants. Strange anomalies and irregularities appear on the screen, raising more questions than answers.\n")
+        typing("Upon a swift glance at the screen, it takes only a fraction of a second before a crimson alert floods the main display, accompanied by a piercing alarm. Clutching your ears, you swiftly redirect your attention to the screen, where the urgent message reads, 'EVACUATE NOW: SPECIMEN FREE, PLEASE EXIT THROUGH THE MAINTENANCE TUNNELS TO THE ESCAPE POD.'\n")
+        typing("In that very moment, as if anticipating the chaos, you witness the creature forcefully emerging from one of the expansive test tubes. The creature towers at a minimum of 8 feet, hunched over, its silver form exuding an almost slimy texture. Details escape you as you pivot and dash out of the entrance in which you just came.\n")
+        typing("Swiftly seeking refuge, you urgently locate a concealed spot, remaining silent until the unsettling sounds of the creature fade away. Once the coast is clear, you rise to your feet and make your way toward the previously mentioned maintenance tunnels.")
+        time.sleep(5)
+        system('clear')
+        tunnels()
     else:
         typing("Please choose a valid option")
         system('clear')
@@ -76,50 +95,47 @@ def medical_bay():
 
 def research_lab():
     typing("As you step into the Research Labs, the air feels different, charged with an unsettling energy. The sterile, metallic surroundings give way to a labyrinth of interconnected chambers filled with experimental equipment, holographic displays, and the remnants of scientific endeavors.\n")
-    rl_choice = input("Do you 'investigate experimental equipment' or 'avoid the lab': ")
+    rl_choice = input("Do you 'investigate experimental equipment' or 'return to medical bay': ")
 
     if rl_choice == "investigate experimental equipment":
         system('clear')
-        typing("Navigating through the maze of advanced machinery, you come across holographic projections displaying complex equations and charts. Some of the equipment seems to be in a state of disarray, while others hum with an otherworldly energy. Choosing this option allows you to delve into the depths of the station's scientific experiments, potentially unlocking valuable information or unearthing technologies that could aid your survival. However, tinkering with experimental devices may also pose unforeseen risks, and the consequences of meddling with the unknown may linger long after you leave the labs.")
-    elif rl_choice == "avoid the lab":
+        typing("Navigating through the maze of advanced machinery, you come across holographic projections displaying complex equations and charts. Some of the equipment seems to be in a state of disarray, while others hum with an otherworldly energy. Your attention is drawn to a spherical object, prompting you to casually retrieve it. As you do so, a faint beep resonates, triggering the activation of the device... BOOM!")
+        time.sleep(5)
         system('clear')
-        typing("Cautiously, you decide to bypass the Research Labs, sensing an underlying danger within the uncharted territories of scientific experimentation. While this choice reduces immediate risks, it also means missing out on potential discoveries that could have provided vital clues to the station's mysterious past or offered solutions to challenges ahead. The decision to play it safe may shield you from immediate threats, but it might limit your understanding of the events that transpired within these walls.")
+        death()
+    elif rl_choice == "return to medical bay":
+        system('clear')
+        typing("Cautiously, you decide to bypass the Research Labs, sensing an underlying danger within the uncharted territories of scientific experimentation. While this choice reduces immediate risks, it also means missing out on potential discoveries that could have provided vital clues to the station's mysterious past or offered solutions to challenges ahead. You return to the medical bay.")
+        time.sleep(3)
+        system('clear')
+        medical_bay()
     else:
         typing("Please choose a valid option")
         system('clear')
         research_lab()
 
 def tunnels():
-    typing("As you contemplate your next move, you notice a partially concealed entrance leading to a labyrinth of maintenance tunnels. The flickering emergency lights cast eerie shadows, creating an atmosphere of suspense and anticipation. The decision to explore these dark passages could unveil hidden secrets or pose unforeseen dangers.\n")
-    t_choice = input("Do you 'traverse the dark tunnels' or 'avoid the tunnnels': ")
+    typing("You head into the labyrinth of maintenance tunnels. The flickering lights cast eerie shadows, creating an atmosphere of suspense and anticipation. The decision to explore these dark passages could unveil hidden secrets or pose unforeseen dangers.\n")
+    t_choice = input("Do you 'explore the maintenance tunnels' or 'continue exploring the station': ")
 
-    if t_choice == "traverse the dark tunnels":
+    if t_choice == "explore the maintenance tunnels":
         system('clear')
-        typing("With a deep breath, you decide to venture into the maintenance tunnels. The narrow passageways twist and turn, occasionally illuminated by the feeble glow of malfunctioning overhead lights. Along the way, you discover forgotten storage rooms containing abandoned equipment and supplies. Some items may prove valuable for survival, while others emit strange energy signatures, hinting at the station's mysterious experiments.\n")
-        typing("As you progress, you come across access points to restricted areas that were sealed off during the evacuation. Opening these doors could reveal crucial information about the station's history, shedding light on the events that led to its current state. However, the tunnels aren't without peril, and you may encounter malfunctioning security systems or remnants of experiments gone awry.")
-    elif t_choice == "avoid the tunnels":
+        typing("Taking a deep breath, you resolve to explore the maintenance tunnels. The slender corridors wind and bend, sporadically lit by the faint glow of malfunctioning overhead lights. During your journey, you stumble upon neglected storage rooms filled with discarded equipment and supplies.\n")
+        typing("Continuing onward, you encounter entry points to areas that were off-limits and sealed off during the evacuation. Upon opening these doors, a spacious bay of compartments is revealed, once designed to accommodate escape pods. However, only three pods remain. You hastily approach the nearest one, only to find it battered.")
+        time.sleep(5)
         system('clear')
-        typing("Concerned about the potential risks lurking in the darkness, you choose to bypass the maintenance tunnels, opting for safer routes through the main corridors. However, this decision limits your access to hidden areas and leaves behind valuable resources and clues that could impact the unfolding narrative.\n")
-        typing("While avoiding the tunnels reduces immediate threats, it also limits your understanding of the station's intricate layout and the events that transpired. The main corridors may still hold dangers of their own, as automated systems malfunction and environmental hazards become apparent.")
+        escape_pod()
+    elif t_choice == "continue exploring the station":
+        system('clear')
+        typing("Wary of the hidden dangers within the shadows, you decide to avoid the maintenance tunnels and instead take the safer paths along the main corridors during your exploration. As you resume your journey, a faint noise persists just a few meters behind you. When you glance back, the corridor stretches endlessly into darkness. When you turn your head forward again, the immense creature comes into view. It turned out to be the final sight etched in your memory... ")
+        time.sleep(5)
+        system('clear')
+        death()
     else:
         typing("Please choose a valid option")
+        system('clear')
         system('clear')
         tunnels()
-
-def mystery_code():
-    typing("As you explore the abandoned space station, you come across a series of strange symbols and cryptic messages etched onto the walls of certain sections. The symbols seem alien, as if they hold the key to understanding the events that unfolded here. It's a moment of eerie fascination, and you must decide whether to invest time in unraveling these enigmatic messages.\n")
-    mc_choice = input("Do you 'investigate the messages' or 'ignore the messages': ")
-
-    if mc_choice == "investigate the messages":
-        system('clear')
-        typing("Driven by curiosity or a sense of urgency, you choose to investigate the cryptic messages. You examine the symbols, take notes, and cross-reference them with any information you've gathered from the control room or personal logs. The process is time-consuming, but as you make progress, patterns start to emerge. The messages appear to be a combination of scientific notations, warnings, and pleas for help. Some even hint at the presence of an unknown entity or force aboard the station.")
-    elif mc_choice == "ignore the messages":
-        system('clear')
-        typing("Opting to focus on the immediate goal of finding a way to escape, you decide to ignore the cryptic messages. The symbols remain a mystery as you prioritize survival and avoid the potential distractions that decoding them might bring. However, this choice might mean missing out on crucial information that could impact your understanding of the situation or affect your decisions later on.")
-    else:
-        typing("Please choose a valid option")
-        system('clear')
-        mystery_code()
 
 def escape_pod():
     typing("The air in the makeshift repair bay is tense with anticipation as you stand before the battered escape pod. Its hull bears the scars of cosmic debris, and internal systems flicker with erratic lights. Time is of the essence, and the urgency to leave the desolate space station intensifies.\n")
@@ -127,18 +143,45 @@ def escape_pod():
 
     if ep_choice == "attempt to repair the pod":
         system('clear')
-        typing("You gather your knowledge from the exploration of the station's various sections. The technical manuals you discovered in the control room and the spare parts salvaged from the maintenance tunnels become your tools. With a focused determination, you meticulously start repairing the damaged components of the escape pod.\n")
-        typing("Success in repairing the escape pod depends on the player's accumulated knowledge and the choices made throughout the game. If the player successfully repairs the pod, they may benefit from enhanced navigation and safety features during their escape. However, failure may result in critical malfunctions, endangering the escape attempt.")
+        typing("You gather your knowledge from the exploration of the station's various sections. you meticulously start repairing the damaged components of the escape pod.\n")
+        typing("Despite lacking self-confidence in your abilities, you manage to bring it to life. As the display illuminates, prompting you to chart a course, you step inside. After inputting the route, you press the prominent 'launch' button. With a significant shift in weight, you embark on a journey into the expansive cosmos, heading back home.")
+        time.sleep(5)
+        system('clear')
+        end()
     elif ep_choice == "improvise a makeshift solution":
         system('clear')
-        typing("Lacking the necessary resources or opting for a faster approach, you decide to improvise a makeshift solution to get the escape pod operational. Using the experimental technology discovered in the research labs and the insights gained from deciphering cryptic messages, you cobble together a unique, jury-rigged system.")
+        typing("Lacking the necessary resources or opting for a quicker solution, you decide to improvise a makeshift fix. Despite recognizing the risks, you entertain the idea of launching yourself into space with just a spacesuit, which is a terrible idea... **// oh sorry, im just the narrators I can't have opinions appareantly. //** As you approach the suit, you observe a slight crack in the helmetz, **// YET YOU STILL PROCEED //** After what seems like an eternity struggling to put on the suit, you prepare the airlock at the rear of the escape pod bay. One door seals shut, the chamber pressurises, and the other door opens. You are expelled from the chamber, and almost immediately, an intense pressure builds up behind your eyes. Your condition deteriorates rapidly until... BANG!")
+        time.sleep(5)
+        system('clear')
+        death()
     else:
         typing("Please choose a valid option")
         system('clear')
         escape_pod()
 
+def death():
+    print("=======================")
+    print("*       *             *")
+    print("   *             *\n")
+    print("-----------------------")
+    print("     // You Died //    ")
+    print("-----------------------")
+    print("*      *           *"      )
+    print("   *           *      *\n ")
+    print("=======================")
+    time.sleep(5)
+
 def end():
-    pass
+    print("=======================")
+    print("*       *             *")
+    print("   *             *\n")
+    print("-----------------------")
+    print("  Thanks For Playing!  ")
+    print("-----------------------")
+    print("*      *           *"      )
+    print("   *           *      *\n ")
+    print("=======================")
+    time.sleep(5)
 
 # Defining the introduction function and assigning the story intro to print
 def start():
@@ -174,3 +217,5 @@ def start():
 #     else:
 #         typing("Please choose a valid option")
 #         system('clear')
+        
+control_room()
