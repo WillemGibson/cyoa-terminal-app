@@ -1,4 +1,4 @@
-## Introduction
+## ⚙️ Introduction
 Embark on a riveting journey into the unknown with our thrilling Choose Your Own Adventure (CYOA) game set in the desolate corridors of an abandoned space station. As you step into the eerie stillness of this derelict outpost, the air hums with a sense of mystery and untold tales. In this atmospheric and immersive experience, players will navigate the haunting remnants of a once-bustling hub of cosmic activity, encountering enigmatic artifacts, malfunctioning machinery, and the echoes of a lost crew's final moments. With each decision, players shape the narrative, unveiling the secrets concealed within the station's metallic confines. Will you uncover the station's dark history, solve cryptic puzzles, or succumb to the eerie silence that pervades this cosmic graveyard? Prepare for a gripping adventure where your choices determine not only your fate but the destiny of a forsaken space station lost in the cosmic expanse.
 
 ## 💻 Installation Guide
